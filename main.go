@@ -25,6 +25,8 @@ func main() {
 	http.HandleFunc("/", server.GetRequest)
 	//post request
 	http.HandleFunc("/ascii-art", server.PostRequest)
+	//get request download
+	http.HandleFunc("/download", server.GetDownloadFile)
 	//open port- listen
 	log.Fatal(http.ListenAndServe(":8080", nil))
 }

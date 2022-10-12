@@ -2,10 +2,12 @@
 <html lang="en">
 
 <head>
+    
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
     <title>Ascii Art Generator</title>
+    <link rel="icon" type="image/x-icon" href="static/favicon.ico">
     <link href="static/style.css" type="text/css" rel="stylesheet" />
 </head>
 
@@ -24,16 +26,29 @@
             <label for="shadow">Shadow</label>            
         </div>
         <div>
-            <input type="submit" value="Submit" id="submit">
+            <input type="submit" value="Submit" id="submit" class="btt">
         </div>
     </form>
+   
+    {{if .Submit}}
     <div id="output">
-        <pre>{{.}}</pre>
+        <pre>{{ .DrawingText}}</pre>
     </div>
+    <input type="button" value="Download" id="download-button" class="btt">
+    <input type="button" value="Back" id="back-button" class="btt">
+    {{else}}
+    <div id="output">
+    </div>
+    <input type="Button" value="Download" id="download-button" class="btt" disabled>
+    {{end}}
+
     <footer>
-        <p>by ashley and gin Ⓒ 2022</p>
+        <p>By Ashley and Gin Ⓒ 2022</p>
     </footer>
+    <script src="/static/jquery-3.6.1.min.js"></script>
+    <script type="text/javascript" src="/static/script.js"></script>
 </body>
+
 </html>
 
 

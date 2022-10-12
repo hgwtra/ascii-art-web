@@ -13,6 +13,14 @@ func GetRequest(w http.ResponseWriter, r *http.Request) {
 		errorNotFound(w)
 		return
 	}
-	Tpl.Execute(w, nil)
+	Tpl.Execute(w, struct{ Submit bool }{false})
 
+}
+
+func GetDownloadFile(w http.ResponseWriter, r *http.Request) {
+	b := []byte(FinalText)
+	w.WriteHeader(http.StatusOK)
+	w.Header().Set("Content-Type", "application/octet-stream")
+	w.Write(b)
+	return
 }

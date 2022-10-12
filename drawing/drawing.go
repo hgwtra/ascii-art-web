@@ -15,8 +15,9 @@ func Display(s string, bannerName string) string {
 	//get the dictionary
 	bannerPath := "drawing/banners/" + bannerName + ".txt"
 	dictionary := ReadBannerFile(bannerPath)
-
+	//
 	var display [8][]byte
+
 	for i := 0; i < len(s); i++ {
 		for _, v := range dictionary {
 			if s[i] == byte(v.charDec) {
@@ -26,7 +27,9 @@ func Display(s string, bannerName string) string {
 			}
 		}
 	}
+	//fmt.Println(display)
 
+	//test3 := strings.Join(display, "\n") + "\n"
 	res := ""
 	for i := 0; i < 8; i++ {
 		for _, v := range display[i] {
@@ -35,12 +38,14 @@ func Display(s string, bannerName string) string {
 		res += "\n"
 	}
 
+	//fmt.Print(res)
 	return res
 
 }
 
 func ReadBannerFile(bannerPath string) []char {
 	//handle 2nd os arg for txt name
+
 	file, err := os.Open(bannerPath)
 	if err != nil {
 		log.Fatal(err)
@@ -84,3 +89,17 @@ func ReadBannerFile(bannerPath string) []char {
 
 }
 
+// var finalText string
+// 	test := "hello\n\nthere"
+// 	sourceTextArr := strings.Split(sourceText, "\\n")
+// 	fmt.Println(sourceTextArr)
+// 	for _, v := range sourceTextArr {
+// 		if len(v) != 0 {
+// 			res := ascii.Display(v, bannerName)
+// 			finalText += res
+// 		} else {
+// 			finalText += "\n"
+// 		}
+
+// 	}
+// 	fmt.Print(finalText)
