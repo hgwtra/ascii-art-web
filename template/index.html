@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge, chrome=1">
+    <title>Ascii Art Generator</title>
+    <link href="static/style.css" type="text/css" rel="stylesheet" />
+</head>
+
+<body>
+    <h1>Ascii Art Generator</h1>
+    <form method="POST" action="/ascii-art">
+        <label for="input" name="input" id="input">Input</label>
+        <textarea name="text" id="text" placeholder="Type something to start..." required></textarea>
+        <label for="fonts" id="fonts">Choose a Font</label><br>
+        <div>
+            <input type="radio" name="fonts" value="standard" id="standard">
+            <label for="standard">Standard</label>
+            <input type="radio" name="fonts" value="thinkertoy" id="thinkertoy">
+            <label for="thinkertoy">Thinkertoy</label>
+            <input type="radio" name="fonts" value="shadow" id="shadow">
+            <label for="shadow">Shadow</label>            
+        </div>
+        <div>
+            <input type="submit" value="Submit" id="submit">
+        </div>
+    </form>
+    <div id="output">
+        <pre>{{.}}</pre>
+    </div>
+    <footer>
+        <p>by ashley and gin Ⓒ 2022</p>
+    </footer>
+</body>
+</html>
+
+
+
